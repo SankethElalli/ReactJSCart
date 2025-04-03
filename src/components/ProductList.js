@@ -10,11 +10,13 @@ function ProductList({ addToCart }) {
     useEffect(() => {
         axios.get(`${config.apiUrl}/api/products`)
             .then(response => {
+                console.log('API Response:', response.data);
                 setProducts(response.data);
                 setLoading(false);
             })
-            .catch(() => {
-                setError('Error loading products');
+            .catch((error) => {
+                console.error('API Error:', error);
+                setError(`Error loading products: ${error.message}`);
                 setLoading(false);
             });
     }, []);
