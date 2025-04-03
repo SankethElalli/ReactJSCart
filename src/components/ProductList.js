@@ -1,28 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import config from '../config';
+import React from 'react';
+import products from '../data/products';
 
 function ProductList({ addToCart }) {
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        axios.get(`${config.apiUrl}/api/products`)
-            .then(response => {
-                console.log('API Response:', response.data);
-                setProducts(response.data);
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.error('API Error:', error);
-                setError(`Error loading products: ${error.message}`);
-                setLoading(false);
-            });
-    }, []);
-
-    if (loading) return <div>Loading products...</div>;
-    if (error) return <div>{error}</div>;
     if (!products?.length) return <div>No products found</div>;
 
     return (
