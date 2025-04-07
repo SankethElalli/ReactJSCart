@@ -290,3 +290,80 @@ div[style="width: 80px;"] {
 .delete-btn:hover img {
   opacity: 0.7;
 }
+
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+  }
+
+  .container {
+    grid-template-columns: 100%;
+    gap: 20px;
+  }
+
+  .products-section, .cart-section {
+    width: 100%;
+  }
+
+  .table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .table th, .table td {
+    padding: 8px;
+    font-size: 0.85em;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  .cart-items {
+    max-height: 300px;
+  }
+
+  .d-flex {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .ms-3 {
+    margin-left: 0.5rem;
+  }
+
+  button {
+    padding: 6px 12px;
+    font-size: 0.85em;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 5px;
+  }
+
+  .table th, .table td {
+    padding: 6px;
+    font-size: 0.8em;
+  }
+
+  img {
+    max-width: 40px;
+  }
+
+  .cart-items {
+    max-height: 250px;
+  }
+
+  .quantity-badge, .price-tag {
+    width: auto !important;
+    min-width: 40px;
+  }
+
+  .delete-btn {
+    margin-left: 0.5rem;
+  }
+}
